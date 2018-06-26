@@ -2,14 +2,15 @@
 
 {% block content %}
 <div class="post">
-    <h1>{{ addr.name }}</h1>
-    <p>{{ addr.call_1|linebreaksbr }}</p>
-    <p>{{ addr.call_2|linebreaksbr }}</p>
-    <p>{{ addr.e_mail }}</p>
     {% if addr.created_date %}
     <div class="date">
-        {{ addr.created_date }}
+        등록일 : {{ addr.created_date }}
     </div>
     {% endif %}
+    <a class="btn btn-default" href="{% url 'addr_edit' pk=addr.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <h1>{{ addr.name }}</h1>
+    <p>call_1 : {{ addr.call_1|linebreaksbr }}</p>
+    <p>call_2 : {{ addr.call_2|linebreaksbr }}</p>
+    <p>e_mai : {{ addr.e_mail }}</p>
 </div>
 {% endblock %}

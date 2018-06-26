@@ -4,9 +4,9 @@
 {% for addr in addrs %}
 <div class="post">
     <h1><a href="{% url 'addr_detail' pk=addr.pk %}">{{ addr.name }}</a></h1>
-    <p>{{ addr.call_1|linebreaksbr }}</p>
+    <p>call_1 : {{ addr.call_1|linebreaksbr }}</p>
     <div class="date">
-        <p>created: {{ addr.created_date }}</p>
+        <p>등록일 : {{ addr.created_date }}</p>
     </div>
 </div>
 {% endfor %}
