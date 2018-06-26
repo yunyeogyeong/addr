@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def addr_list(request):
+    return render(request, 'addr/addr_list.html', {})
