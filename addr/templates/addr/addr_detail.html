@@ -1,0 +1,15 @@
+{% extends 'addr/base.html' %}
+
+{% block content %}
+<div class="post">
+    <h1>{{ addr.name }}</h1>
+    <p>{{ addr.call_1|linebreaksbr }}</p>
+    <p>{{ addr.call_2|linebreaksbr }}</p>
+    <p>{{ addr.e_mail }}</p>
+    {% if addr.created_date %}
+    <div class="date">
+        {{ addr.created_date }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Address Test</title>
-</head>
-<body>
-<div>
-    <h1><a href="">Address</a></h1>
-</div>
+{% extends 'addr/base.html' %}
+
+{% block content %}
 {% for addr in addrs %}
-    <div>
-        <h3><a href="">{{ addr.name }}</a></h3>
-        <p>{{ addr.call_1|linebreaksbr }}</p>
+<div class="post">
+    <h1><a href="{% url 'addr_detail' pk=addr.pk %}">{{ addr.name }}</a></h1>
+    <p>{{ addr.call_1|linebreaksbr }}</p>
+    <div class="date">
         <p>created: {{ addr.created_date }}</p>
     </div>
+</div>
 {% endfor %}
-</body>
-</html>
+{% endblock %}
