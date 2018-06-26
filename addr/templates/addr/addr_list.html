@@ -3,11 +3,11 @@
 {% block content %}
 {% for addr in addrs %}
 <div class="post">
-    <h1><a href="{% url 'addr_detail' pk=addr.pk %}">{{ addr.name }}</a></h1>
-    <p>call_1 : {{ addr.call_1|linebreaksbr }}</p>
     <div class="date">
-        <p>등록일 : {{ addr.created_date }}</p>
+        <p>등록일: {{ addr.published_date }}</p>
     </div>
+    <h1><a href="{% url 'addr_detail' pk=addr.pk %}">{{ addr.name }}</a></h1>
+    <p>연락처_1 : {{ addr.call_1|linebreaksbr }}</p>
 </div>
 {% endfor %}
 {% endblock %}

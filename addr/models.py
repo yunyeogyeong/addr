@@ -10,10 +10,13 @@ class Address(models.Model):
     e_mail = models.EmailField(max_length=50, blank=True, null=True)
     created_date = models.DateTimeField(
         default=timezone.now)
+    published_date = models.DateTimeField(
+        blank=True, null=True)
 
     def publish(self):
-        self.created_date = timezone.now()
+        self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
         return self.name
+
